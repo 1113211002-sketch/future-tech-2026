@@ -1,0 +1,35 @@
+// 1. 匯入 Bootstrap 的 SCSS (Vite 會自動處理)
+@import "bootstrap/scss/bootstrap";
+
+// 2. 匯入 AOS 動畫樣式
+@import "aos/dist/aos.css";
+
+// 3. 自定義樣式
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden; // 防止動畫導致的水平捲軸
+}
+
+// Hero 區塊滿版設定
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+// 區塊通用間距
+section {
+  padding: 80px 0;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 0;
+}
