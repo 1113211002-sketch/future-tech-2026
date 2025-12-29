@@ -4,26 +4,46 @@
 // 2. 匯入 AOS 動畫樣式
 @import "aos/dist/aos.css";
 
-// 3. 自定義樣式
+// 3. 全域基本樣式
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden; // 防止動畫導致的水平捲軸
 }
 
-// Hero 區塊滿版設定
-.hero-section {
+// --- 輪播 (Hero) 區塊樣式 ---
+
+// 1. 強制設定輪播項目的高度為滿版視窗高度
+.carousel-item {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  min-height: 600px;      // 避免在手機橫向時太矮
+  background-color: #000; // 圖片載入前的底色
 }
 
-// 區塊通用間距
+// 2. 設定背景圖片的樣式
+.hero-bg-img {
+  height: 100%;            // 填滿高度
+  object-fit: cover;       // 保持比例填滿，不變形 (關鍵!)
+  filter: brightness(0.5); // 將圖片變暗 50%，讓白色文字更清楚
+}
+
+// 3. 自定義文字區塊的位置 (覆蓋 Bootstrap 預設設定，強制絕對置中)
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* X, Y 軸置中 */
+  
+  // 重置 Bootstrap 原本的定位
+  bottom: auto;
+  right: auto;
+  
+  width: 100%;
+  z-index: 10;       // 確保文字在最上層
+  padding-bottom: 0; // 移除不必要的底部 padding
+}
+
+// --- 其他區塊樣式 ---
+
 section {
   padding: 80px 0;
 }
