@@ -13,10 +13,18 @@ body {
 // --- 輪播 (Hero) 區塊樣式 ---
 
 // 1. 強制設定輪播項目的高度為滿版視窗高度
-.carousel-item {
+
+/* 只針對「主視覺」設定滿版高度 */
+#heroCarousel .carousel-item {
   height: 100vh;
-  min-height: 600px;      // 避免在手機橫向時太矮
-  background-color: #000; // 圖片載入前的底色
+  min-height: 600px;
+  background-color: #000;
+}
+
+/* 講者區塊：高度自動，不要強制滿版 */
+#speakerCarousel .carousel-item {
+  height: auto;
+  min-height: auto;
 }
 
 // 2. 設定背景圖片的樣式
